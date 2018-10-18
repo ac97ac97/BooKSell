@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+    <!--private String title;-->
+    <!--private String tag;-->
+    <!--private String img;-->
+    <!--private String reading;-->
+    <!--private String bytime;-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <ImageView
+            android:id="@+id/iv_book"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content" />
+        <LinearLayout
+            android:layout_marginLeft="15dp"
+            android:layout_width="0dp"
+            android:layout_weight="3"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/tv_book_title"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="书名"/>
+            <TextView
+                android:id="@+id/tv_book_tag"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="标签"/>
+            <TextView
+                android:id="@+id/tv_book_person"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="阅读人数"/>
+            <TextView
+                android:id="@+id/tv_book_time"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="上线时间"/>
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>
