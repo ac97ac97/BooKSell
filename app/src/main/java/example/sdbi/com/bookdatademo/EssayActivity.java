@@ -115,6 +115,12 @@ public class EssayActivity extends AppCompatActivity {
                 String reading = jsonObject.getString("reading");
                 String bytime = jsonObject.getString("bytime");
                 BookItem item=new BookItem(title,tags,img,reading,bytime);
+                EssayActivity.this.runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        myAdapterItem.notifyDataSetChanged();
+                    }
+                });
                 bookList.add(item);
                 strtitle=title;
                 strimg=img;

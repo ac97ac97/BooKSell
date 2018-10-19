@@ -202,6 +202,12 @@ public class MainActivity extends AppCompatActivity {
                 strcatalog = catalog;
                 BooklDatalog datalog = new BooklDatalog(id, catalog);
                 datalogs.add(datalog);
+                MainActivity.this.runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        adatpter.notifyDataSetChanged();
+                    }
+                });
 
             }
 

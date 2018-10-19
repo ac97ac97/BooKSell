@@ -21,7 +21,6 @@ import java.util.List;
 
     public class MyAdapterItem extends ArrayAdapter<BookItem> {
     private int resourceId;
-
     public MyAdapterItem(@NonNull Context context, @LayoutRes int resource, List<BookItem> objects) {
         super(context, resource, objects);
         this.resourceId = resource;

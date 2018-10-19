@@ -43,9 +43,7 @@ public class ClassicActivity extends AppCompatActivity {
         sendRequestWithOkhttp();
 //        tvAllData = (TextView) findViewById(R.id.tv_alldata);
 //        initData();
-        myAdapterItem = new MyAdapterItem(this, R.layout.bookitem,bookList);
-        lvBookItem = (ListView) findViewById(R.id.lv_chinaliterature_item);
-        lvBookItem.setAdapter(myAdapterItem);
+
         /**
          * 获取传递过来的id和catalog
          */
@@ -116,6 +114,15 @@ public class ClassicActivity extends AppCompatActivity {
                 String bytime = jsonObject.getString("bytime");
                 BookItem item=new BookItem(title,tags,img,reading,bytime);
                 bookList.add(item);
+                myAdapterItem = new MyAdapterItem(this, R.layout.bookitem,bookList);
+                lvBookItem = (ListView) findViewById(R.id.lv_chinaliterature_item);
+                lvBookItem.setAdapter(myAdapterItem);
+                ClassicActivity.this.runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        myAdapterItem.notifyDataSetChanged();
+                    }
+                });
                 strtitle=title;
                 strimg=img;
                 strtag=tags;

@@ -116,6 +116,12 @@ public class ChildActivity extends AppCompatActivity {
                 String bytime = jsonObject.getString("bytime");
                 BookItem item=new BookItem(title,tags,img,reading,bytime);
                 bookList.add(item);
+                ChildActivity.this.runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        myAdapterItem.notifyDataSetChanged();
+                    }
+                });
                 strtitle=title;
                 strimg=img;
                 strtag=tags;
